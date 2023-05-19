@@ -54,6 +54,10 @@ object Build : BuildType({
             name = "More steps the merrier"
             scriptContent = """echo " More steps the merrier """"
         }
+        script {
+            name = "adding build steps by shan"
+            scriptContent = """echo " shan third build step""""
+        }
     }
 
     triggers {
