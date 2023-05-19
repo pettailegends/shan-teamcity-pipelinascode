@@ -60,10 +60,12 @@ object Build : BuildType({
             scriptContent = """echo " shan third build step""""
         }
         csharpScript {
-            name = "See Sharp Step"
+            name = "See Sharp Step out 345jasd;oadsf"
             content = """
                 #
                   echo "shan was here making parallel changes"
+                  ### 
+                  echo "hi shan"
             """.trimIndent()
             tool = "%teamcity.tool.TeamCity.csi.1.0.3%"
         }
