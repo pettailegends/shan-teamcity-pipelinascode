@@ -51,6 +51,9 @@ object Build : BuildType({
             name = "More steps the merrier"
             scriptContent = """echo " More steps the merrier """"
         }
+        script {
+            name = " third could be a charming time" 
+            scriptContent = """echo "Third time steps """"
     }
 
     triggers {
