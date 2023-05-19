@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
+import jetbrains.buildServer.configs.kotlin.buildSteps.csharpScript
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.failureConditions.BuildFailureOnText
 import jetbrains.buildServer.configs.kotlin.failureConditions.failOnText
@@ -57,6 +58,11 @@ object Build : BuildType({
         script {
             name = "adding build steps by shan"
             scriptContent = """echo " shan third build step""""
+        }
+        csharpScript {
+            name = "See Sharp Step"
+            content = "#"
+            tool = "%teamcity.tool.TeamCity.csi.1.0.3%"
         }
     }
 
