@@ -65,6 +65,7 @@ object Build : BuildType({
                 #
                   echo "shan was here making parallel changes"
                   echo " shan making more changes "
+                  dfghdfghdfghdfgh
             """.trimIndent()
             tool = "%teamcity.tool.TeamCity.csi.1.0.3%"
         }
