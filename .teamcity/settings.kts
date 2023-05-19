@@ -61,7 +61,10 @@ object Build : BuildType({
         }
         csharpScript {
             name = "See Sharp Step"
-            content = "#"
+            content = """
+                #
+                  echo "shan was here making parallel changes"
+            """.trimIndent()
             tool = "%teamcity.tool.TeamCity.csi.1.0.3%"
         }
     }
