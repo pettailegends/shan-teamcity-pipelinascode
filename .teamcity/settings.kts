@@ -1,6 +1,8 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.failureConditions.BuildFailureOnText
+import jetbrains.buildServer.configs.kotlin.failureConditions.failOnText
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
@@ -51,13 +53,19 @@ object Build : BuildType({
             name = "More steps the merrier"
             scriptContent = """echo " More steps the merrier """"
         }
-        script {
-            name = " third could be a charming time" 
-            scriptContent = """echo "Third time steps """"
     }
 
     triggers {
         vcs {
+        }
+    }
+
+    failureConditions {
+        failOnText {
+            conditionType = BuildFailureOnText.ConditionType.CONTAINS
+            pattern = "error"
+            failureMessage = "i found error"
+            reverse = false
         }
     }
 
